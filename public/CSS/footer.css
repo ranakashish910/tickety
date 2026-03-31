@@ -1,0 +1,292 @@
+/* --- GLOBAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: #000;
+    background-color: #000;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+.tickety-footer-original {
+    background-color: #0b111e;
+    width: 100%;
+    margin: 0;
+    margin-top: auto;
+    padding: 0;
+}
+
+/* --- PHOTO DATA (NO DOWNLOAD NEEDED) --- */
+.skyline-img-data {
+    width: 100%;
+    height: 130px;
+    background-image: url("https://svgshare.com/i/15pG.svg");
+    background-repeat: repeat-x;
+    background-position: bottom;
+    background-size: contain;
+    opacity: 0.35;
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 20px 0;
+    color: #475569;
+    font-size: 0.75rem;
+    background: #0b111e;
+    margin: 0 !important; /* Isse niche ka space 100% hatt jayega */
+    display: block;
+    line-height: 1;
+}
+
+/* --- THE CITY SKYLINE (FIXED) --- */
+.skyline-wrapper {
+    width: 100%;
+    line-height: 0;
+    text-align: center;
+    background: #0b111e;
+    margin: 0;
+}
+
+.original-skyline-img {
+    width: 100%;
+    height: auto;
+    max-height: 100px;
+    display: block;
+    /* Image ko Ticket9 jaisa dikhane ke liye */
+    filter: invert(1) opacity(0.2) brightness(1.2);
+    /* Niche wala gap marne ke liye trick */
+    margin-bottom: -1px; 
+}
+
+/* --- CONTAINER --- */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 0;
+    padding: 30px 20px 0;
+}
+
+.footer-content-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* --- BRAND SECTION --- */
+.brand-logo {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0 0 10px;
+}
+section:last-child,
+div:last-child {
+    margin-bottom: 0 !important;
+}
+
+.brand-logo span {
+    color: #00e5ff;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.brand-desc {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+
+/* --- LINKS SIDE --- */
+.footer-links-side {
+    display: flex;
+    gap: 70px;
+}
+
+.link-column h4 {
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.link-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.link-column ul li {
+    margin-bottom: 10px;
+}
+
+.link-column ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.link-column ul li a:hover {
+    color: #00e5ff !important;
+    text-shadow: 0 0 8px #00e5ff;
+}
+
+/* --- SOCIALS --- */
+.social-links-row a {
+    color: #94a3b8;
+    margin-right: 15px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+section{
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.social-links-row a:hover {
+    color: #00e5ff;
+}
+
+/* --- GLOBAL RESET --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    min-height: 100vh;
+    background: #000;
+    overflow-x: hidden; /* Side scroll rokne ke liye */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Sabhi sections ka bottom margin zero karo taaki gap na bane */
+section, div {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.tickety-footer-original {
+    background-color: #0b111e;
+    width: 100%;
+    margin-top: 25px;
+    padding: 0;
+    display: block;
+    position: relative;
+    /* --- GAP KILLER TRICK --- */
+    /* Ye niche ke kisi bhi khali space ko footer ke color se bhar dega */
+    box-shadow: 0 500px 0 500px #0b111e; 
+}
+
+.footer-copyright {
+    text-align: center;
+    padding: 25px 0;
+    color: #475569;
+    font-size: 0.75rem;
+    background: #0b111e;
+    margin: 0 !important;
+    display: block;
+    line-height: 1.5;
+}
+
+/* --- CONTAINER & CONTENT --- */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px 0;
+    background-color: #0b111e;
+}
+
+.footer-content-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 25px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.brand-logo {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 900;
+    margin: 0 0 10px;
+}
+
+.brand-logo span {
+    color: #00e5ff;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.5);
+}
+
+.brand-desc {
+    color: #94a3b8;
+    font-size: 0.85rem;
+    max-width: 350px;
+    margin-bottom: 20px;
+}
+
+.footer-links-side {
+    display: flex;
+    gap: 70px;
+}
+
+.link-column h4 {
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.link-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.link-column ul li {
+    margin-bottom: 10px;
+}
+
+.link-column ul li a {
+    color: #94a3b8;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: 0.3s;
+}
+
+.link-column ul li a:hover {
+    color: #00e5ff !important;
+    text-shadow: 0 0 8px #00e5ff;
+}
+
+.social-links-row a {
+    color: #94a3b8;
+    margin-right: 15px;
+    font-size: 1.1rem;
+    transition: 0.3s;
+}
+
+.social-links-row a:hover {
+    color: #00e5ff;
+}

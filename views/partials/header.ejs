@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/header.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <nav class="main-nav">
+    <div class="nav-container">
+        <div class="nav-logo">
+            <a href="/">TICKETY</a>
+        </div>
+
+        <ul class="nav-links">
+            <li><a href="/concerts">EXPLORE EVENTS</a></li>
+            <li><a href="/venues">VENUES</a></li>
+            <li><a href="/featured">FEATURED</a></li>
+        </ul>
+
+        <div class="nav-auth">
+            <% if(!session) { %>
+                <a href="/auth/login" class="login-btn">LOGIN</a>
+                <a href="/auth/register" class="register-btn">REGISTER</a>
+            <% } else { %>
+                <a href="/profile" class="profile-link">MY TICKETS</a>
+                <a href="/auth/logout" class="logout-btn">LOGOUT</a>
+            <% } %>
+        </div>
+    </div>
+</nav>
+</body>
+
+</html>

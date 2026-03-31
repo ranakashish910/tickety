@@ -1,0 +1,198 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: #0d1117;
+    --neon-cyan: #00f2ff;
+    --neon-purple: #bc13fe;
+    --text-white: #ffffff;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--text-white);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    /* Register page settings */
+    overflow: hidden; 
+    position: relative;
+    background: url('https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=1920&q=80') no-repeat center center fixed;
+    background-size: cover;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 17, 23, 0.7); 
+    backdrop-filter: blur(8px);
+    z-index: 0;
+}
+
+.navbar {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    height: 70px;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.back-btn {
+    background: var(--neon-cyan);
+    color: #000;
+    padding: 6px 18px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 0 10px var(--neon-cyan);
+    font-size: 0.85rem;
+}
+
+.login-container {
+    position: relative;
+    z-index: 10;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    padding-bottom: 40px; 
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid var(--neon-purple);
+    border-radius: 15px;
+    width: 800px; /* Wider for 2 sections */
+    max-width: 95%;
+    backdrop-filter: blur(10px);
+    padding: 25px; 
+    box-shadow: 0 0 20px rgba(188, 19, 254, 0.2);
+    display: flex; /* Makes it two column */
+}
+
+.login-section {
+    flex: 1;
+}
+
+.login-section h2 {
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: 300;
+}
+
+.divider {
+    width: 1px;
+    background: linear-gradient(to bottom, transparent, var(--neon-cyan), transparent);
+    margin: 0 25px;
+}
+
+.input-group {
+    margin-bottom: 10px; 
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 3px;
+    font-size: 0.7rem;
+    color: #aaa;
+}
+
+.input-group input {
+    width: 100%;
+    background: rgba(0,0,0,0.3);
+    border: 1px solid rgba(0, 242, 255, 0.5);
+    border-radius: 6px;
+    padding: 8px 10px;
+    color: white;
+    outline: none;
+    font-size: 0.85rem;
+}
+
+.pass-wrapper { position: relative; }
+.pass-wrapper i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+/* Buttons and Links */
+.neon-btn {
+    width: 100%;
+    background: var(--neon-cyan);
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 12px var(--neon-cyan);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.links {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.links a {
+    color: var(--neon-cyan);
+    text-decoration: none;
+}
+
+.alert {
+    width: 800px;
+    max-width: 95%;
+    padding: 8px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+}
+.success-alert { border: 1px solid var(--neon-cyan); background: rgba(0,242,255,0.1); color: var(--neon-cyan); }
+.error-alert { border: 1px solid #ff4d4d; background: rgba(255,77,77,0.1); color: #ff4d4d; }
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    background: #000;
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+footer p {
+    font-size: 10px;
+    color: var(--neon-cyan);
+    letter-spacing: 2px;
+}

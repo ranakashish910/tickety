@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="CSS/guestDashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | TICKETY</title>
+</head>
+
+<body>
+
+    <%-include('../partials/header')%>
+
+        <div class="dashboard-container">
+            <header class="hero-section">
+                <div class="video-container">
+                    <video autoplay muted loop playsinline class="hero-video">
+                        <source src="/videos/concert.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-overlay"></div>
+                </div>
+
+                <div class="hero-content">
+                    <h1 class="glow-text">TICKETY</h1>
+                    <p class="hero-subtitle">Life is short. Book the front row.</p>
+
+                    <div class="search-container">
+                        <form action="/events/search" method="GET" class="search-bar">
+                            <div class="search-input-group">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                                <input type="text" name="q" placeholder="Search events, concerts, shows...">
+                            </div>
+                            <button type="submit" class="search-btn">SEARCH</button>
+                        </form>
+                    </div>
+
+                    <div class="quick-tags">
+                        <span>Concert</span><span>Sports</span><span>Music</span>
+                        <span>Live Shows</span><span>Comedy Show</span>
+                    </div>
+                </div>
+            </header>
+
+            <div class="event-grid">
+                <% if (events && events.length> 0) { %>
+                    <% events.forEach(event=> { %>
+                        <article class="event-card">
+                            <div class="card-img-wrapper">
+                                <img src="<%= event.image %>" alt="<%= event.title %>">
+                            </div>
+                            <div class="card-content">
+                                <span class="category-badge">
+                                    <%= event.category %>
+                                </span>
+                                <h2 class="event-title">
+                                    <%= event.title %>
+                                </h2>
+                                <p class="event-subtitle">
+                                    <%= event.subtitle %>
+                                </p>
+                                <div class="event-meta">
+                                    <p><i class="fa-regular fa-calendar"></i>
+                                        <%= event.date %>
+                                    </p>
+                                    <p><i class="fa-solid fa-location-dot"></i>
+                                        <%= event.location %>
+                                    </p>
+                                </div>
+                                <footer class="price-section">
+                                    <a href="/auth/login" class="book-now-btn">BOOK NOW</a>
+                                </footer>
+                            </div>
+                        </article>
+                        <% }) %>
+                            <% } else { %>
+                                <div class="no-events">
+                                    <h3>No live events at the moment.</h3>
+                                </div>
+                                <% } %>
+            </div>
+
+            <section class="why-tickety-section">
+                <div class="why-tickety-container">
+                    <div class="why-image-side">
+                        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=1000"
+                            alt="Experience">
+                    </div>
+                    <div class="why-content-side">
+                        <h1 class="why-heading">WHY BOOK WITH TICKETY?</h1>
+                        <div class="why-item">
+                            <div class="why-tick-icon">✓</div>
+                            <div class="why-text">
+                                <h4>Verified Events</h4>
+                                <p>We partner directly with organizers to ensure 100% authentic tickets.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <div class="why-tick-icon">✓</div>
+                            <div class="why-text">
+                                <h4>Secure Payments</h4>
+                                <p>Your transactions are protected with industry-leading encryption.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <div class="why-tick-icon">✓</div>
+                            <div class="why-text">
+                                <h4>Instant Delivery</h4>
+                                <p>Get your e-tickets immediately after a successful booking.</p>
+                            </div>
+                        </div>
+                        <div class="why-item">
+                            <div class="why-tick-icon">✓</div>
+                            <div class="why-text">
+                                <h4>24/7 Assistance</h4>
+                                <p>Our support team is always ready to help you with your queries.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="fees-promo-section">
+                <div class="fees-promo-container">
+                    <div class="fees-text-content">
+                        <h1 class="fees-heading">LOWEST FEES IN THE INDUSTRY</h1>
+                        <p class="fees-subtext">No contracts, no monthly fees, no worries.</p>
+                        <p class="fees-description">Affordable ticket fees that make sense. Sell tickets and keep more
+                            of your revenue.</p>
+                    </div>
+
+                    <div class="fees-card-wrapper">
+                        <div class="fees-main-card">
+                            <div class="price-value">10<span class="currency">₹</span></div>
+                            <div class="plus-icon">+</div>
+                            <div class="percent-badge">1%</div>
+                            <p class="per-ticket-text">PER TICKET SOLD</p>
+                        </div>
+                        <div class="fees-glow-circle"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonials-section">
+                <div class="section-title">
+                    <h2>What Our Customers Say</h2>
+                    <div class="title-underline"></div>
+                </div>
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div class="user-info">
+                            <img src="https://i.pravatar.cc/150?u=1" alt="User">
+                            <div>
+                                <h4>Rahul Verma</h4>
+                                <p>Concert Enthusiast</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Tickety se booking karna bahut easy hai. Last week Arijit Singh ka
+                            concert attend kiya!"</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="user-info">
+                            <img src="https://i.pravatar.cc/150?u=2" alt="User">
+                            <div>
+                                <h4>Sneha Kapoor</h4>
+                                <p>Tech Lead</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Best platform for workshops. Instant e-tickets mil gaye aur entry
+                            fast thi."</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="user-info">
+                            <img src="https://i.pravatar.cc/150?u=3" alt="User">
+                            <div>
+                                <h4>Arjun Singh</h4>
+                                <p>Music Producer</p>
+                            </div>
+                        </div>
+                        <p class="testimonial-text">"Neon UI is fire! Highly recommended for live events."</p>
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card"><i class="fa-solid fa-users-viewfinder"></i>
+                        <h3>500+</h3>
+                        <p>Total Events</p>
+                    </div>
+                    <div class="stat-card"><i class="fa-solid fa-ticket"></i>
+                        <h3>10k+</h3>
+                        <p>Tickets Sold</p>
+                    </div>
+                    <div class="stat-card"><i class="fa-solid fa-star"></i>
+                        <h3>4.9/5</h3>
+                        <p>User Satisfaction</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- <div class="skyline-img-data"></div> -->
+            <div class="tickety-chatbot-wrapper">
+                <div class="tickety-chat-box" id="ticketyChatBox">
+                    <div class="chat-header">
+                        <div class="header-info">
+                            <div class="bot-icon-small">T</div>
+                            <div>
+                                <strong>Tickety AI</strong>
+                                <span>Hi, I am Tickety AI</span>
+                            </div>
+                        </div>
+                        <button onclick="toggleTicketyChat()">×</button>
+                    </div>
+
+                    <div class="chat-messages" id="chatContainer">
+                        <div class="msg bot-msg">Hi! I am Tickety AI</div>
+                    </div>
+
+                    <div class="chat-input-area">
+                        <input type="text" id="userMsgInput" placeholder="Type your message..."
+                            onkeypress="handleKeyPress(event)">
+                        <button onclick="sendChatMessage()"><i class="fa-solid fa-paper-plane"></i></button>
+                    </div>
+                </div>
+                <div class="tickety-chatbot-wrapper">
+    <div class="chat-tooltip" id="chatTooltip">
+        Hi! I am Tickety AI 👋
+    </div>
+
+    <button class="chat-trigger-btn" id="chatTrigger" onclick="toggleTicketyChat()">
+        <i class="fa-solid fa-robot"></i>
+        <span class="pulse-ring"></span>
+    </button>
+</div>
+                <button class="chat-trigger-btn" id="chatTrigger" onclick="toggleTicketyChat()">
+                    <i class="fa-solid fa-robot"></i>
+                    <span class="pulse-ring"></span>
+                </button>
+            </div>
+            <%-include('../partials/footer')%>
+        </div>
+        <script src="/js/chatbot.js"></script>
+</body>
+
+</html>

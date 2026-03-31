@@ -1,0 +1,109 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #050505; 
+    overflow-x: hidden; 
+}
+.main-nav {
+    background: rgba(5, 5, 5, 0.85); 
+    backdrop-filter: blur(12px);     
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    font-family: 'Inter', sans-serif;
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo a {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #42f5f5; 
+    text-decoration: none;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(66, 245, 245, 0.3);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.login-btn {
+    color: #bbb;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transition: color 0.3s;
+}
+
+.login-btn:hover {
+    color: #fff;
+}
+
+.register-btn {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 10px 24px;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    background: rgba(255, 255, 255, 0.03);
+    transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+    background: rgba(66, 245, 245, 0.1);
+    border-color: #42f5f5;
+    box-shadow: 0 0 20px rgba(66, 245, 245, 0.25);
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; 
+    }
+    
+    .main-nav {
+        padding: 15px 20px;
+    }
+}

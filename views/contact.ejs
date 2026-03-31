@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/font-awesome.min.css">
+    <title>Contact Tickety | We're Here to Help</title>
+</head>
+<body>
+    <%- include('partials/header') %>
+    <div class="contact-wrapper">
+        <div class="contact-header">
+            <h1 class="neon-title">Get in <span>Touch</span></h1>
+            <p>Have questions about a booking? Our AI and support team are 24/7 active.</p>
+        </div>
+
+        <div class="contact-grid">
+            <div class="info-sidebar">
+                <div class="info-card">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <h4>Location</h4>
+                        <p>Tech Hub, Sector 62, Noida, India</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email Us</h4>
+                        <p>support@tickety.com</p>
+                    </div>
+                </div>
+
+                <div class="info-card">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <h4>Call Support</h4>
+                        <p>+91 98765 43210</p>
+                    </div>
+                </div>
+
+                <div class="social-links">
+                    <a href="https://www.instagram.com/tickety.events"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/BookMyShowIN"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/company/insiderin"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <div class="form-container">
+                <form action="/contact" method="POST">
+                    <div class="input-group">
+                        <label>Full Name</label>
+                        <input type="text" name="name" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="alex@example.com" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Subject</label>
+                        <select name="subject">
+                            <option value="booking">Booking Issue</option>
+                            <option value="refund">Refund Request</option>
+                            <option value="business">Business Inquiry</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Your Message</label>
+                        <textarea name="message" rows="5" placeholder="How can we help you?" required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        Send Message <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center;">
+        <a href="/" class="btn-home">Back to Homepage</a>
+    </div>
+    <!-- <%- include('partials/footer') %> -->
+</body>
+</html>

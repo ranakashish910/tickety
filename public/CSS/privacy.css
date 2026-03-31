@@ -1,0 +1,123 @@
+:root {
+    --bg-deep: #020617;
+    --accent: #00f2ff; 
+    --accent-glow: rgba(0, 242, 255, 0.5);
+    --glass-bg: rgba(15, 23, 42, 0.7);
+    --text-silver: #cbd5e1;
+}
+
+body {
+    background-color: var(--bg-deep);
+    background-image: 
+        linear-gradient(rgba(0, 242, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 242, 255, 0.03) 1px, transparent 1px);
+    background-size: 30px 30px;
+    color: #ffffff;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    margin: 0;
+}
+
+.privacy-container {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 50px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 4px solid var(--accent); /* Top Neon Bar */
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+/* Header Section */
+header {
+    text-align: left;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    margin: 0;
+    background: linear-gradient(90deg, #fff, var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.update-text {
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-top: 5px;
+    font-weight: bold;
+}
+
+/* Legal Sections */
+section {
+    margin-bottom: 45px;
+    padding-left: 20px;
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+}
+
+section:hover {
+    border-left: 1px solid var(--accent);
+    background: linear-gradient(90deg, rgba(0, 242, 255, 0.02), transparent);
+}
+
+section h2 {
+    font-size: 1rem;
+    color: var(--accent);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: var(--text-silver);
+    line-height: 1.8;
+}
+
+section strong {
+    color: #fff;
+    border-bottom: 1px solid var(--accent);
+}
+
+.btn-home {
+    display: inline-block;
+    padding: 12px 40px;
+    margin-top: 30px;
+    background: transparent;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid var(--accent);
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-home:hover {
+    background: var(--accent);
+    color: #000;
+    box-shadow: 0 0 30px var(--accent-glow);
+    transform: scale(1.05);
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+    .privacy-container {
+        margin: 40px 15px;
+        padding: 30px;
+    }
+    header h1 { font-size: 2.2rem; }
+}

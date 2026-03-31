@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | TICKETY</title>
+    <link rel="stylesheet" href="/CSS/register.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">TICKETY</div>
+        <a href="/" class="back-btn">Back to Homepage</a>
+    </header>
+
+    <main class="container">
+        <h1>REGISTER | TICKETY</h1>
+
+        <div class="signup-card">
+            
+            <% if(locals.success) { %>
+                <div class="success-msg">
+                    <i class="fas fa-check-circle"></i> <%= success %>
+                </div>
+            <% } %>
+
+            <form action="/register" method="POST" id="registerForm">
+                <div class="input-group">
+                    <label>Full Name</label>
+                    <input type="text" name="name" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" name="email" id="email"  required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <div class="pass-wrapper">
+                        <input type="password" name="password" id="password" required>
+                        <i class="far fa-eye toggle-password" data-target="password"></i>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <label>Confirm Password</label>
+                    <div class="pass-wrapper">
+                        <input type="password" name="confirmPassword" id="confirmPassword" required>
+                        <i class="far fa-eye toggle-password" data-target="confirmPassword"></i>
+                    </div>
+                </div>
+
+                <button type="submit" class="signup-btn">SIGN UP</button>
+            </form>
+
+            <% if(locals.error) { %>
+                <p class="error-text"><i class="fas fa-exclamation-triangle"></i> <%= error %></p>
+            <% } %>
+
+            <p class="footer-text">Already have an account? <a href="/login">SIGN IN</a></p>
+
+            <div class="social-icons">
+                <i class="fab fa-google"></i>
+                <i class="fab fa-facebook-f"></i>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; TICKETY 2026</p>
+    </footer>
+
+    <script>
+        const form = document.getElementById('registerForm');
+        const emailInput = document.getElementById('email');
+
+        const isValidEmail = (email) => {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        };
+
+        form.addEventListener('submit', function (e) {
+            const name = document.querySelector('input[name="name"]').value.trim();
+            const emailValue = emailInput.value.trim();
+            const password = document.getElementById('password').value;
+            const confirm = document.getElementById('confirmPassword').value;
+
+            if (!name || !emailValue || !password || !confirm) {
+                e.preventDefault();
+                alert("Please fill in all fields.");
+                return;
+            }
+
+            if (!isValidEmail(emailValue)) {
+                e.preventDefault(); 
+                alert("Please enter a valid email address!");
+                emailInput.style.borderColor = "#ff4d4d";
+                emailInput.focus();
+                return;
+            }
+
+            if (password !== confirm) {
+                e.preventDefault();
+                alert("Passwords do not match!");
+                return;
+            }
+        });
+
+        document.querySelectorAll('.toggle-password').forEach(icon => {
+            icon.addEventListener('click', function() {
+                const targetId = this.getAttribute('data-target');
+                const input = document.getElementById(targetId);
+                
+                if (input.type === 'password') {
+                    input.type = 'text';
+                    this.classList.replace('fa-eye', 'fa-eye-slash');
+                } else {
+                    input.type = 'password';
+                    this.classList.replace('fa-eye-slash', 'fa-eye');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

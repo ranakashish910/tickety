@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | TICKETY</title>
+    <link rel="stylesheet" href="/CSS/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">TICKETY</div>
+        <a href="/" class="back-btn">Back to Homepage</a>
+    </header>
+
+    <main class="login-container">
+        <% if (locals.success) { %>
+            <div class="alert success-alert">
+                <i class="fas fa-check-circle"></i> <%= success %>
+            </div>
+        <% } %>
+        
+        <% if (locals.error) { %>
+            <div class="alert error-alert">
+                <i class="fas fa-exclamation-circle"></i> <%= error %>
+            </div>
+        <% } %>
+
+        <div class="glass-card">
+            <section class="login-section user-side">
+                <h2>USER LOGIN</h2>
+                <form action="/login" method="POST">
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Password</label>
+                        <div class="pass-wrapper">
+                            <input type="password" name="password" placeholder="Enter your password" required>
+                            <i class="far fa-eye toggle-pass"></i>
+                        </div>
+                    </div>
+                    <button type="submit" class="neon-btn cyan">LOG IN AS USER</button>
+                    <div class="links">
+                        <a href="/register">Create Account</a>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                </form>
+            </section>
+
+            <div class="divider"></div>
+
+            <section class="login-section admin-side">
+                <h2>ADMIN LOGIN</h2>
+                <form action="/admin/login" method="POST">
+                    <div class="input-group">
+                        <label>Admin ID / Email</label>
+                        <input type="text" name="adminEmail" placeholder="Admin Credential" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Access Key</label>
+                        <div class="pass-wrapper">
+                            <input type="password" name="adminPassword" placeholder="Access Key" required>
+                            <i class="far fa-eye toggle-pass"></i>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>Admin Secret Key</label>
+                        <div class="pass-wrapper">
+                            <input type="password" name="secretKey" placeholder="Master Key Required" required>
+                            <i class="fas fa-lock"></i>
+                        </div>
+                    </div>
+                    <button type="submit" class="neon-btn purple">LOG IN AS ADMIN</button>
+                    <div class="links">
+                        <a href="#">Admin Recovery</a>
+                    </div>
+                </form>
+            </section>
+        </div>
+        
+    </main>
+
+    <footer>
+        <p>&copy; TICKETY 2026</p>
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toggle-pass').forEach(icon => {
+            icon.onclick = function() {
+                const input = this.previousElementSibling;
+                if (input.type === "password") {
+                    input.type = "text";
+                    this.classList.replace('fa-eye', 'fa-eye-slash');
+                } else {
+                    input.type = "password";
+                    this.classList.replace('fa-eye-slash', 'fa-eye');
+                }
+            };
+        });
+    </script>
+</body>
+</html>

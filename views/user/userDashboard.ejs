@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickety | Customer Dashboard</title>
+    <link rel="stylesheet" href="/CSS/userDashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body class="dash-body">
+
+    <%- include('../partials/header') %> <div class="dash-wrapper">
+        
+        <aside class="dash-sidebar glass-elevated">
+            <div class="sidebar-header">
+                <div class="logo">TICKETY<span>.</span></div>
+            </div>
+            
+            <nav class="sidebar-links">
+                <a href="/dashboard" class="side-link active">
+                    <i class="fa-solid fa-gauge-high"></i>
+                    <span>DASHBOARD</span>
+                </a>
+                <a href="/my-tickets" class="side-link">
+                    <i class="fa-solid fa-ticket"></i>
+                    <span>MY TICKETS</span>
+                </a>
+                <a href="/profile" class="side-link">
+                    <i class="fa-solid fa-user-circle"></i>
+                    <span>MY PROFILE</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="/logout" class="logout-btn">
+                    <i class="fa-solid fa-power-off"></i>
+                    <span>LOGOUT</span>
+                </a>
+            </div>
+        </aside>
+
+        <main class="dash-main">
+            
+            <section class="wow-landing glass-elevated">
+                <div class="glitch-text">SYNCED_&_READY_<span><%= user.name.toUpperCase() %></span></div>
+                <p>Welcome back! We've generated your unique Tickety Profile. All systems are online.</p>
+                <div class="quick-status">
+                    <span><i class="fa-solid fa-check-circle"></i> Status: Synced</span>
+                    <span><i class="fa-solid fa-id-badge"></i> ID: <%= user._id.toString().slice(-6) %></span>
+                </div>
+            </section>
+
+            <section class="upcoming-events-grid">
+                <h2>UPCOMING_EVENTS</h2>
+                
+                <div class="event-cards-container">
+                    <div class="event-card glass-elevated">
+                        <div class="event-img" style="background-image: url('concert.jpg');"></div>
+                        <div class="event-info">
+                            <h3>Sunburn Music Festival</h3>
+                            <p><i class="fa-regular fa-calendar"></i> 15th April 2026</p>
+                            <button class="btn-primary sm">VIEW DETAILS</button>
+                        </div>
+                    </div>
+
+                    <div class="event-card glass-elevated">
+                        <div class="event-img" style="background-image: url('tech_ summit.jpg');"></div>
+                        <div class="event-info">
+                            <h3>Tech Summit 2026</h3>
+                            <p><i class="fa-regular fa-calendar"></i> 10th May 2026</p>
+                            <button class="btn-primary sm">VIEW DETAILS</button>
+                        </div>
+                    </div>
+                    </div>
+            </section>
+
+            <section class="recent-tickets-grid">
+                <h2>RECENT_TICKETS</h2>
+                <div class="ticket-cards-container">
+                    <div class="ticket-card glass-elevated">
+                        <div class="ticket-details">
+                            <h4>Concert Pass</h4>
+                            <p>₹2,499.00 / Apr 15</p>
+                        </div>
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+
+                    <div class="ticket-card glass-elevated">
+                        <div class="ticket-details">
+                            <h4>Startup Pitch Deck</h4>
+                            <p>₹999.00 / May 10</p>
+                        </div>
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+</body>
+</html>
